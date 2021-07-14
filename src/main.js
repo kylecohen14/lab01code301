@@ -10,7 +10,6 @@ class Main extends React.Component {
       data: data
     };
   }
-  
   beastArr = (data) => {
     let newArr = data.map( (value) => {
       return <HornedBeast title={value.title} image_url={value.image_url} description={value.description} horns={value.horns} key={value.image_url} />;
