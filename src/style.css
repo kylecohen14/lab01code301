@@ -1,10 +1,13 @@
+img {
+  max-width: 70%;
+};
 .Col {
-  width: 200px;
-  background-color: aqua;
-};
-main {
-  background-color: aqua;
-};
-h1 {
-  background-color: blue;
-};
+  max-width: 100%;
+  background-color: rgba(172, 255, 47, 0.486);
+}
+body {
+  background-color: rgba(172, 255, 47, 0.315);
+}
+.Col img {
+  width: 50%;
+}
