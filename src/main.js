@@ -1,7 +1,7 @@
 import React from 'react';
 import HornedBeast from './HornedBeast.js';
 import data from './data.json';
-
+import {Container} from 'react-bootstrap';
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Main extends React.Component {
   
   beastArr = (data) => {
     let newArr = data.map( (value) => {
-      return <HornedBeast title={value.title} image_url={value.image_url} description={value.description} horns={value.horns} />;
+      return <HornedBeast title={value.title} image_url={value.image_url} description={value.description} horns={value.horns} key={value.image_url} />;
     });
     return newArr;
   };
@@ -24,7 +24,9 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
-        {this.beastArr(data)}
+        <Container>
+          {this.beastArr(data)}
+        </Container>
       </div>
     );
   }
