@@ -1,5 +1,8 @@
 import React from 'react';
 import data from './data.json';
+import heart from './simple-red-heart.jpg';
+import {Container, Row, Col} from 'react-bootstrap';
+
 
 class HornedBeast extends React.Component {
 
@@ -19,11 +22,18 @@ class HornedBeast extends React.Component {
       console.log(this.state.data);
       return (
         <>
-          <h1>{this.props.title}</h1>
-          <img src={this.props.image_url} onClick={this.vote} />
-          <h2>{this.props.description}</h2>
-          <h3>Number of horns {this.props.horns}</h3>
-          <span>Number of times faviorted: {this.state.votesOnBeast} </span>
+          <Container>
+            <Row>
+              <Col>1 of 1
+                <h1>{this.props.title}</h1>
+                <img src={this.props.image_url} onClick={this.vote} />
+                <h2>{this.props.description}</h2>
+                <h3>Number of horns {this.props.horns}</h3>
+                <span>Number of times fav: {this.state.votesOnBeast} </span>
+                <img src={heart} />
+              </Col>
+            </Row>
+          </Container>
 
           {/* <h2>{this.state.data[0].description}</h2> */}
         </>
