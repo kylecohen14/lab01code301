@@ -1,5 +1,5 @@
 import React from 'react';
-import data from './data.json';
+// import data from './data.json';
 import heart from './simple-red-heart.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Row, Col} from 'react-bootstrap';
@@ -12,19 +12,18 @@ class HornedBeast extends React.Component {
     super(props);
     this.state = {
       votesOnBeast: 0,
-      data: data
+      // data: data
     };
   }
 
     vote = () => {
       this.setState({
         votesOnBeast: this.state.votesOnBeast + 1,
-        // test: true
       });
+      this.props.showAsModal(this.props.title);
     }
 
     render() {
-      console.log(this.state.data);
       return (
         <>
           <Row>
