@@ -4,6 +4,7 @@ import Main from './main.js';
 import Footer from './footer.js';
 import './style.css';
 import data from './data.json';
+import Selectedbeast from './Selectedbeast.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends React.Component {
         <Header />
         <Main data={this.state.data}/>
         <Footer />
+        <Selectedbeast data={this.state.data}/>
       </div>
     );
   }

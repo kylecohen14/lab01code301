@@ -17,7 +17,10 @@ class HornedBeast extends React.Component {
   }
 
     vote = () => {
-      this.setState({ votesOnBeast: this.state.votesOnBeast + 1});
+      this.setState({
+        votesOnBeast: this.state.votesOnBeast + 1,
+        // test: true
+      });
     }
 
     render() {
@@ -25,7 +28,7 @@ class HornedBeast extends React.Component {
       return (
         <>
           <Row>
-            <Col>1 of 1
+            <Col>
               <h1>{this.props.title}</h1>
               <img src={this.props.image_url} onClick={this.vote} />
             </Col>
