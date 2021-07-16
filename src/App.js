@@ -16,10 +16,9 @@ class App extends React.Component {
       showModal: false,
       selectBeast: {},
       selectForm: {},
-      selectHorns: ""
+      selectHorns: ''
     };
   }
-  
   submitForm = e => {
     e.preventDefault();
     let selectForm = data.find(value => value.horns);
@@ -45,15 +44,15 @@ class App extends React.Component {
       return (
         <div className="app">
           <Header />
-          <BeastForm 
+          <BeastForm
             selectForm={this.selectForm}
             formSubmited={this.submitForm}
             filterHorns={this.filterHorns}/>
-          <Main 
+          <Main
             // data={horns}
             data={this.state.beastData}
             showAsModal={this.showAsModal}/>
-          <Selectedbeast 
+          <Selectedbeast
             selectBeast={this.state.selectBeast}
             modalOn={this.state.showModal}
             closeModal ={this.closeModal}
