@@ -1,5 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 class Selectedbeast extends React.Component {
 
@@ -7,41 +10,33 @@ class Selectedbeast extends React.Component {
     return (
       
       <div className='modal'>
-        <Modal isOpen={true}>
-          <h2>Modal title</h2>
-          <p>Modal Body</p>
+        
+        <Modal show={this.props.modalOn} onHide={this.props.closeModal}>
+          <Modal.Dialog>
+            <Modal.Header closeButton>
+              <Modal.Title>{this.props.selectBeast.title}</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <Card onClick={this.showAsModal}>
+                <Card.Img variant="top" src={this.props.selectBeast.image_url} />
+                <Card.Body>
+                  <Card.Title>{this.props.selectBeast.title}</Card.Title>
+                  <Card.Text>{this.props.selectBeast.description} </Card.Text>
+                </Card.Body>
+              </Card>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button onClick={this.props.closeModal} variant="secondary">Close</Button>
+            </Modal.Footer>
+          </Modal.Dialog>
         </Modal>
       </div>
     );}
 }
 
-//<div>
-//   {this.props.allBeasts.map((value, idx) => (
-//     <HornedBeast 
-//       key={idx}
-//       index={idx}
-//       src={value.image_url}
-//       title={value.title}
-//       description={value.description}
-//       displayAsModal={this.props.displayAsModal}
-//     />
-//   ))}
-//   </div>
-// }}}
-     
-//         <Modal.Dialog>
-//   <Modal.Header closeButton>
-//     <Modal.Title>Modal title</Modal.Title>
-//   </Modal.Header>
 
-//   <Modal.Body>
-//     <p>Modal body text goes here.</p>
-//   </Modal.Body>
-
-//   <Modal.Footer>
-//     <Button variant="secondary">Close</Button>
-//     <Button variant="primary">Save changes</Button>
-//   </Modal.Footer>
-// </Modal.Dialog> */}
-    
 export default Selectedbeast;
+
+// Calling correct selectBeast on modal inputs???

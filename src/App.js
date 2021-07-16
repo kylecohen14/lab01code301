@@ -10,20 +10,36 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data
+      data: data,
+      showModal: false,
+      selectBeast: {},
     };
   }
-
-  render () {
-    return (
-      <div className="app">
-        <Header />
-        <Main data={this.state.data}/>
-        <Footer />
-        <Selectedbeast data={this.state.data}/>
-      </div>
-    );
+  showAsModal = (beast) => {
+    console.log(beast);
+    let selectBeast = data.find(value => value.title === beast);
+    this.setState({selectBeast,showModal: true });
   }
+    closeModal = () => {
+      this.setState({showModal: false});
+    }
+
+
+
+    render () {
+      return (
+        <div className="app">
+          <Header />
+          <Main data={this.state.data}
+            showAsModal={this.showAsModal}/>
+          <Selectedbeast selectBeast={this.state.selectBeast}
+            modalOn={this.state.showModal}
+            closeModal ={this.closeModal}
+          />
+          <Footer />
+        </div>
+      );
+    }
 }
 
 export default App;
