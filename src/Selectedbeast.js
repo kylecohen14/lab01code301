@@ -8,9 +8,7 @@ class Selectedbeast extends React.Component {
 
   render () {
     return (
-      
       <div className='modal'>
-        
         <Modal show={this.props.modalOn} onHide={this.props.closeModal}>
           <Modal.Dialog>
             <Modal.Header closeButton>
