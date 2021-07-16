@@ -3,7 +3,6 @@ import HornedBeast from './HornedBeast.js';
 import {Container} from 'react-bootstrap';
 
 class Main extends React.Component {
-  
   render() {
     return (
       <div className="main">
@@ -11,7 +10,7 @@ class Main extends React.Component {
           {this.props.data.map( (value) =>
             <HornedBeast title={value.title} image_url={value.image_url}
               description={value.description} horns={value.horns}
-              key={value.image_url} 
+              key={value.image_url}
               showAsModal={this.props.showAsModal}/>
           )};
         </Container>
@@ -21,7 +20,7 @@ class Main extends React.Component {
 }
 //<div>
 //   {this.props.allBeasts.map((value, idx) => (
-//     <HornedBeast 
+//     <HornedBeast
 //       key={idx}
 //       index={idx}
 //       src={value.image_url}
